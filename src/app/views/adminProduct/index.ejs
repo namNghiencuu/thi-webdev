@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Admin Product</title>
+  <link rel="stylesheet" type="text/css" href="/src/lib/datatables/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" type="text/css" href="./adminproduct.css">
+  <link rel="stylesheet" type="text/css" href="./adminproduct.css">
+  <link rel="stylesheet" type="text/scss" href="/src/lib/bootstrap/scss/bootstrap.scss">
+  <link rel="stylesheet" type="text/css" href="/src/lib/bootstrap/sb-admin-2.min.css">
+</head>
+
+<body>
+  <h1>Admin Product</h1>
+  <button id="add">Add</button>
+  <div class="table-responsive">
+    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Util</th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Util</th>
+        </tr>
+      </tfoot>
+      <%products.map(function(product, index){%>
+      <tr id="<%-index%>" class="product">
+        <th><%-product.name%></th>
+        <th><%-product.description%></th>
+        <th><%-product.price%></th>
+        <th>
+          <i class="fa fa-remove"></i>
+          <i class="fa fa-pen"></i>
+        </th>
+      </tr>
+      <%})%>
+      <tbody>
+
+      </tbody>
+    </table>
+  </div>
+
+  <script src="/src/lib/jquery/jquery.min.js"></script>
+
+  <script src="/src/lib/datatables/jquery.dataTables.min.js"></script>
+  <script src="/src/lib/datatables/dataTables.bootstrap4.min.js"></script>
+  <script src="/src/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <script src="./adminproduct.js"></script>
+</body>
+
+</html>
